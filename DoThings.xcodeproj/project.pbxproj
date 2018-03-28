@@ -14,6 +14,7 @@
 		4822BB322065083B009E0E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4822BB312065083B009E0E1C /* Assets.xcassets */; };
 		4822BB352065083B009E0E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4822BB332065083B009E0E1C /* LaunchScreen.storyboard */; };
 		489BE3B1206A835C004CC156 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489BE3B0206A835C004CC156 /* CategoryViewController.swift */; };
+		C365543FC31ACAFCA4354A64 /* Pods_DoThings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BA747467F5CD484F20393D /* Pods_DoThings.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		4822BB342065083B009E0E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4822BB362065083B009E0E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		489BE3B0206A835C004CC156 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		8785A7FC7E0B94765B277D06 /* Pods-DoThings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoThings.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoThings/Pods-DoThings.release.xcconfig"; sourceTree = "<group>"; };
+		A3BA747467F5CD484F20393D /* Pods_DoThings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoThings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF292267EABA854FF98EC9CC /* Pods-DoThings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoThings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoThings/Pods-DoThings.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,12 +37,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C365543FC31ACAFCA4354A64 /* Pods_DoThings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13A3CC5A89FE4E4DA2669A29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF292267EABA854FF98EC9CC /* Pods-DoThings.debug.xcconfig */,
+				8785A7FC7E0B94765B277D06 /* Pods-DoThings.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		48122983206564FC0029C8EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +92,8 @@
 			children = (
 				4822BB292065083B009E0E1C /* DoThings */,
 				4822BB282065083B009E0E1C /* Products */,
+				13A3CC5A89FE4E4DA2669A29 /* Pods */,
+				DA4F120269B98C3C1113D258 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +118,14 @@
 			path = DoThings;
 			sourceTree = "<group>";
 		};
+		DA4F120269B98C3C1113D258 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3BA747467F5CD484F20393D /* Pods_DoThings.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4822BB392065083B009E0E1C /* Build configuration list for PBXNativeTarget "DoThings" */;
 			buildPhases = (
+				1416BB0EFDCE297E8D7C3978 /* [CP] Check Pods Manifest.lock */,
 				4822BB232065083B009E0E1C /* Sources */,
 				4822BB242065083B009E0E1C /* Frameworks */,
 				4822BB252065083B009E0E1C /* Resources */,
+				C7214CEA6D892F2A4113ED31 /* [CP] Embed Pods Frameworks */,
+				5DD8324F3B54F423EA793F30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +195,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1416BB0EFDCE297E8D7C3978 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoThings-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DD8324F3B54F423EA793F30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoThings/Pods-DoThings-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7214CEA6D892F2A4113ED31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DoThings/Pods-DoThings-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoThings/Pods-DoThings-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4822BB232065083B009E0E1C /* Sources */ = {
@@ -312,6 +395,7 @@
 		};
 		4822BB3A2065083B009E0E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF292267EABA854FF98EC9CC /* Pods-DoThings.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +411,7 @@
 		};
 		4822BB3B2065083B009E0E1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8785A7FC7E0B94765B277D06 /* Pods-DoThings.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
